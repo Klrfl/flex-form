@@ -18,35 +18,162 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+a {
+  color: var(--grey);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+img {
+  max-width: 100%;
+}
+
+input {
+  all: unset;
+  box-sizing: border-box;
+}
+
+input:focus-visible {
+  outline: 2px solid dodgerblue;
+}
+
 main {
   background: var(--charcoal-grey);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
 }
 
 .main-container {
   background: var(--white);
-  padding: 2rem;
-  border-radius: 0.5rem;
+  min-height: 100vh;
+
+  overflow: hidden;
+  position: relative;
 
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  flex-direction: column;
 }
 
-.main-form > :is(label, input) {
+.attribution {
+  background: #000a;
+  backdrop-filter: blur(1rem);
+
+  color: var(--white);
+  text-align: center;
+  padding: 1.2rem;
+
+  position: absolute;
+  inset: auto 0 0 0;
+}
+
+.form-wrapper h1 {
+  font-size: 3.2rem;
+}
+
+.form-wrapper__text,
+.form-wrapper__main-form {
+  padding-inline: 2rem;
+}
+
+.form-wrapper__text ul {
+  margin: 0;
+  padding-inline-start: 1rem;
+}
+
+.form-wrapper__text li {
+  margin-block: 1.2rem;
+}
+
+.form-wrapper__main-form > :is(label, input) {
   display: block;
   width: 100%;
 }
 
-.main-form label {
+.form-wrapper__main-form label {
   padding-block: 1rem;
+  font-weight: 700;
 }
 
-.main-form input {
-  padding: 1rem;
+.form-wrapper__main-form input {
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  outline: 2px solid var(--grey);
+}
+
+.form-wrapper__main-form input:focus-visible {
+  outline-color: black;
+}
+
+.form-wrapper__main-form input[type="submit"] {
+  outline: none;
+  background: var(--dark-slate-grey);
+  color: var(--white);
+  margin-block-start: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  transition: background-color 200ms ease;
+}
+
+.form-wrapper__main-form input[type="submit"]:is(:hover, :focus-visible) {
+  background: var(--tomato);
+  cursor: pointer;
+}
+
+.form-wrapper__image {
+  width: 100%;
+  margin: 0;
+  order: -1;
+}
+
+.form-wrapper__image img {
+  width: 100%;
+}
+
+.success-message {
+  display: none;
+}
+
+@media screen and (min-width: 50em) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .main-container {
+    min-height: 100%;
+    padding: 2rem;
+    border-radius: 2rem;
+    gap: 2rem;
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-container > * {
+    flex: 1 1 0;
+  }
+
+  .form-wrapper__image {
+    order: unset;
+  }
+}
+
+@media (hover: hover) {
+  .attribution {
+    translate: 0 100%;
+    transition: translate 200ms ease;
+  }
+
+  .main-container:hover .attribution {
+    translate: 0 0;
+  }
+}
+
+@media (hover: hover) and (min-width: 50em) {
+  .attribution {
+    translate: 0 100%;
+  }
+}
