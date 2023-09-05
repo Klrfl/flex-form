@@ -43,16 +43,26 @@ input:focus-visible {
 
 main {
   background: var(--charcoal-grey);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.main-container,
+.success-message {
+  min-height: 100vh;
 }
 
 .main-container {
   background: var(--white);
-  min-height: 100vh;
 
   overflow: hidden;
   position: relative;
 
   display: flex;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -106,17 +116,18 @@ main {
   outline-color: black;
 }
 
-.form-wrapper__main-form button[type="submit"] {
+.btn--submit {
   outline: none;
   background: var(--dark-slate-grey);
   color: var(--white);
   margin-block-start: 1.5rem;
+  padding: 1.5rem;
   text-align: center;
   font-weight: 700;
   transition: background-color 200ms ease;
 }
 
-.form-wrapper__main-form button[type="submit"]:is(:hover, :focus-visible) {
+.btn--submit:is(:hover, :focus-visible) {
   background: var(--tomato);
   cursor: pointer;
 }
@@ -133,20 +144,21 @@ main {
 
 .success-message {
   background: var(--white);
-  max-width: 50ch;
+  padding: 2rem;
   display: none;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 @media screen and (min-width: 50em) {
-  main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  .main-container,
+  .success-message {
+    min-height: 100%;
   }
 
   .main-container {
-    min-height: 100%;
     padding: 2rem;
     border-radius: 2rem;
     gap: 2rem;
@@ -158,6 +170,10 @@ main {
 
   .main-container > * {
     flex: 1 1 0;
+  }
+
+  .success-message {
+    max-width: 50ch;
   }
 
   .form-wrapper__image {
