@@ -26,11 +26,13 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 img {
   max-width: 100%;
 }
 
-input {
+input,
+button {
   all: unset;
   box-sizing: border-box;
 }
@@ -84,7 +86,7 @@ main {
   margin-block: 1.2rem;
 }
 
-.form-wrapper__main-form > :is(label, input) {
+.form-wrapper__main-form > :is(label, input, button) {
   display: block;
   width: 100%;
 }
@@ -94,7 +96,7 @@ main {
   font-weight: 700;
 }
 
-.form-wrapper__main-form input {
+.form-wrapper__main-form > :is(input, button) {
   border-radius: 0.5rem;
   padding: 1.5rem;
   outline: 2px solid var(--grey);
@@ -104,7 +106,7 @@ main {
   outline-color: black;
 }
 
-.form-wrapper__main-form input[type="submit"] {
+.form-wrapper__main-form button[type="submit"] {
   outline: none;
   background: var(--dark-slate-grey);
   color: var(--white);
@@ -114,7 +116,7 @@ main {
   transition: background-color 200ms ease;
 }
 
-.form-wrapper__main-form input[type="submit"]:is(:hover, :focus-visible) {
+.form-wrapper__main-form button[type="submit"]:is(:hover, :focus-visible) {
   background: var(--tomato);
   cursor: pointer;
 }
@@ -130,6 +132,8 @@ main {
 }
 
 .success-message {
+  background: var(--white);
+  max-width: 50ch;
   display: none;
 }
 

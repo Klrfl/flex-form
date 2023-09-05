@@ -33,8 +33,10 @@
 
         <form class="form-wrapper form-wrapper__main-form">
           <label for="email">Email address</label>
-          <input type="text" id="email" placeholder="email@company.com" required />
-          <input type="submit" value="Subscribe to monthly newsletter" />
+          <input type="text" id="email" name="email" placeholder="email@company.com" required />
+          <button type="submit" class="btn--submit">
+            Subscribe to monthly newsletter
+          </button>
         </form>
       </div>
 
@@ -50,14 +52,9 @@
       </div>
     </div>
 
-    <div class="success-message">
-      <p>
-        Thanks for subscribing! A confirmation email has been sent to
-        ash@loremcompany.com. Please open it and click the button inside to
-        confirm your subscription. Dismiss message
-      </p>
-    </div>
+    <div class="success-message"></div>
   </main>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
