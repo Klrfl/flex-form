@@ -207,6 +207,10 @@ main {
     height: 2rem;
   }
 
+  .success-message__text {
+    padding: 0;
+  }
+
   .form-wrapper__image {
     order: unset;
   }
