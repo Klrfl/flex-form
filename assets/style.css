@@ -45,24 +45,23 @@ main {
   background: var(--charcoal-grey);
 
   display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
 .main-container,
 .success-message {
+  background: var(--white);
+
   min-height: 100vh;
 }
 
 .main-container {
-  background: var(--white);
-
+  width: 100%;
   overflow: hidden;
   position: relative;
 
   display: flex;
-  justify-content: center;
+  gap: 2rem;
   flex-direction: column;
 }
 
@@ -134,6 +133,8 @@ main {
 
 .btn--submit {
   outline: none;
+  border-radius: 0.5rem;
+
   background: var(--dark-slate-grey);
   color: var(--white);
   margin-block-start: 1.5rem;
@@ -162,6 +163,12 @@ main {
   background: var(--white);
   padding: 2rem;
   display: none;
+  flex-direction: column;
+}
+
+.success-message__text {
+  padding-block-start: 25vh;
+  flex-grow: 1;
 }
 
 .bold {
@@ -169,16 +176,19 @@ main {
 }
 
 @media screen and (min-width: 50em) {
+  main {
+    justify-content: center;
+    align-items: center;
+  }
   .main-container,
   .success-message {
     min-height: 100%;
+    border-radius: 2rem;
+    padding: 2rem;
   }
 
   .main-container {
-    padding: 2rem;
-    border-radius: 2rem;
-    gap: 2rem;
-
+    width: auto;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -190,6 +200,11 @@ main {
 
   .success-message {
     max-width: 50ch;
+  }
+
+  .success-message__icon {
+    width: 2rem;
+    height: 2rem;
   }
 
   .form-wrapper__image {

@@ -12,16 +12,20 @@ mainForm.addEventListener("submit", (e) => {
   }
 
   successMessage.innerHTML = `
-      <h1>Thanks for subscribing!</h1>
-      <p>
-        A confirmation email has been sent to
-        <span class="bold">${email}</span>. Please open it and click the button inside to
-        confirm your subscription. 
-      </p>
+      <div class="success-message__text">
+        <img src="./assets/images/icon-success.svg" alt="" class="success-message__icon">
+        <h1>Thanks for subscribing!</h1>
+       <p>
+         A confirmation email has been sent to
+         <span class="bold">${email}</span>. Please open it and click the button inside to
+         confirm your subscription. 
+       </p>
+      </div>
+
       <button class="btn--submit">Dismiss message</button>
       `;
   mainContainer.style.display = "none";
-  successMessage.style.display = "block";
+  successMessage.style.display = "flex";
 
   // add event listener after adding innerHTML
   const dismissBtn = document.querySelector(".success-message .btn--submit");
