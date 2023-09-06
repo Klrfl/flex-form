@@ -89,11 +89,27 @@ main {
 
 .form-wrapper__text ul {
   margin: 0;
-  padding-inline-start: 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 .form-wrapper__text li {
   margin-block: 1.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-wrapper__text li::before {
+  content: "";
+  background-image: url("./images/icon-success.svg");
+  background-position: center;
+  background-size: contain;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  aspect-ratio: 1 / 1;
 }
 
 .form-wrapper__main-form > :is(label, input, button) {
